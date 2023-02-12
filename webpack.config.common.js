@@ -8,6 +8,7 @@ module.exports = {
     entry: "./index.js",
     output: {
         filename: "[name].[contenthash].js",
+        assetModuleFilename: 'assets/[name][ext]',
         path: path.resolve(__dirname, "dist"),
         clean: true,
     },
@@ -18,7 +19,7 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 {
-                    from: path.resolve(__dirname, "public/assets"),
+                    from: path.resolve(__dirname, "public/assets/favicon.png"),
                     to: path.resolve(__dirname, "dist/assets"),
                 },
             ],
@@ -48,8 +49,11 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                test: /\.(jpg|svg|mp3|ttf)$/i,
                 type: "asset/resource",
+                generator: {
+                    filename: 'assets/[name][ext]'
+                }
             },
         ],
     },
