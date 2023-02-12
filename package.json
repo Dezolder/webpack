@@ -7,7 +7,7 @@
         "start": "npx webpack serve --config webpack.config.dev.js",
         "build": "npx webpack --config webpack.config.prod.js",
         "build.dev": "npx webpack --config webpack.config.dev.js",
-        "format": "npx eslint --fix ."
+        "format": "eslint --fix --ext .js,.jsx ."
     },
     "keywords": [
         "webpack"

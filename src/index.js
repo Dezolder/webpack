@@ -4,12 +4,12 @@ import './index.scss'
 const root = document.querySelector('#app')
 
 function renderItem(item) {
-    const li = document.createElement('li')
-    li.textContent = item.title
-    console.log(item.title)
-    console.log('')
+  const li = document.createElement('li')
+  li.textContent = item.title
+  console.log(item.title)
+  console.log('')
 
-    root.append(li)
+  root.append(li)
 }
 
 data.forEach(renderItem)
